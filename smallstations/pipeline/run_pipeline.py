@@ -2,6 +2,7 @@ import logging
 
 from smallstations.pipeline import (
     step_10_list_stations_and_lines,
+    step_20_add_line_infos,
 )
 
 def run():
@@ -9,6 +10,7 @@ def run():
 
     steps_to_run = (
         step_10_list_stations_and_lines,
+        step_20_add_line_infos,
     )
     for step in steps_to_run:
         step.run()
