@@ -10,10 +10,11 @@ You should download the code and run it yourself to get a higher image resolutio
 
 # Running the code
 
-Requires Python > 3.3
+Requires Python > 3.3.
 
 ```
 $ git clone git@github.com:BenjaminHabert/RATP_Dataviz.git
+$ cd RATP_Dataviz
 $ make install
 $ make pipeline
 ```
