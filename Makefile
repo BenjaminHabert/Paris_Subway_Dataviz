@@ -3,10 +3,9 @@ pipeline:
 	python smallstations/pipeline/run_pipeline.py
 
 notebook:
+	mkdir -m notebooks &&\
 	. activate.sh &&\
 	jupyter notebook --notebook-dir=notebooks
-
-
 
 install: .venv
 	. activate.sh &&\

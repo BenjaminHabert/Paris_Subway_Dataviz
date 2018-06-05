@@ -61,11 +61,14 @@ def _parse_columns_as_dicts(columns):
 def _parse_station_name(elt):
     return elt.text.strip().replace('\u200d', '')
 
+
 def _parse_frequentation(elt):
     return int(elt.text.strip().replace('\xa0', '').replace('+0', '').replace(',', ''))
 
+
 def _parse_line_name(elt):
     return elt.attrs['title'].replace('\xa0', ' ').replace(' du métro de Paris', '')
+
 
 def _parse_line_url(elt):
     return 'https://fr.wikipedia.org' + elt.attrs['href']

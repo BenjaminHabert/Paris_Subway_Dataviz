@@ -1,17 +1,13 @@
 import logging
 
 import matplotlib
-matplotlib.use('Agg')
-
+matplotlib.use('Agg')  # still annoying that I have to do this.
 
 from matplotlib.patches import Circle, Wedge
 from matplotlib import pyplot as plt
-
-from smallstations import io
-
-
 import seaborn as sns
 
+from smallstations import io
 
 
 def run():
@@ -22,6 +18,7 @@ def run():
     save_figure(fig)
 
     logging.info("Creating plot: completed")
+
 
 def create_figure(stations):
     max_index = stations['line_index'].max()
@@ -38,6 +35,7 @@ def create_figure(stations):
     )
 
     return grid
+
 
 def save_figure(fig):
     _save_helper(fig, 'stations_small.png', dpi=30)
@@ -57,6 +55,7 @@ def _plot_background(radius, **kwargs):
     ax.add_patch(Circle((0, 0), radius=radius, color='#e5e7ea'))
     ax.set_aspect(1)
     ax.axis('off')
+
 
 def _plot_lines(line_index, line_color, **kwargs):
     ax = plt.gca()

@@ -27,6 +27,7 @@ def add_color_info(lines):
     lines['line_color'] = lines['line_url'].apply(_get_color_from_url)
     return lines
 
+
 def add_index_info(lines, min_index=1):
     lines['line_number'] = lines['line'].apply(lambda s: int(re.findall('\d+', s)[0]))
     lines['line_text_length'] = lines['line'].apply(len)
