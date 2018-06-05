@@ -13,7 +13,7 @@ def run():
     stations = io.load_dataframe('stations_and_lines.csv')
     lines = stations.drop_duplicates(subset=['line']).copy()
     lines = add_color_info(lines)
-    lines = add_index_info(lines)
+    lines = add_index_info(lines, min_index=4)
     stations = stations.merge(
         lines.loc[:, ['line', 'line_color', 'line_index']],
         how='left', on='line'
@@ -27,11 +27,11 @@ def add_color_info(lines):
     lines['line_color'] = lines['line_url'].apply(_get_color_from_url)
     return lines
 
-def add_index_info(lines):
+def add_index_info(lines, min_index=1):
     lines['line_number'] = lines['line'].apply(lambda s: int(re.findall('\d+', s)[0]))
     lines['line_text_length'] = lines['line'].apply(len)
     lines.sort_values(by=['line_number', 'line_text_length'], inplace=True)
-    lines['line_index'] = range(len(lines))
+    lines['line_index'] = range(min_index, min_index + len(lines))
     return lines
 
 
