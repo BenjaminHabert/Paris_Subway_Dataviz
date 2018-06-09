@@ -13,6 +13,7 @@ from smallstations import io
 
 N_COLS = 14
 
+
 def run():
     logging.info("Creating plot...")
 
@@ -160,8 +161,8 @@ def _add_legend_data(fig, stations, x_left, y_bottom, delta_x, delta_y, w, h):
 def _add_legend_text(fig, x_left, y_bottom, delta_x, delta_y):
     infos = '\n'.join([
         '',
-        'Each dot is a subway station',
-        '(stations are ordered alphabeticaly).',
+        'Each dot is a subway station ;',
+        'stations are ordered alphabetically.',
         '',
         'Each circle indicates a subway line stopping at this station.',
         '',
@@ -181,9 +182,10 @@ def _add_title_and_signature(fig, x_left, y_bottom, delta_x, delta_y):
 
     # signature
     font = FontProperties(family='serif', size=50)
-    fig.text(x_left + (N_COLS - 0.2) * delta_x, y_bottom + 0.8 * delta_y, "rand-on.com",
-                 fontproperties=FontProperties(family='serif', size=50),
-                 horizontalalignment='right', verticalalignment='bottom')
+    fig.text(x_left + (N_COLS - 0.2) * delta_x, y_bottom + 0.8 * delta_y,
+             "rand-on.com",
+             fontproperties=FontProperties(family='serif', size=50),
+             horizontalalignment='right', verticalalignment='bottom')
 
 
 if __name__ == '__main__':
