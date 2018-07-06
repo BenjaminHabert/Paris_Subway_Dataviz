@@ -2,6 +2,8 @@
 
 This project builds a small-multiple visualization of the Paris subway network.
 
+You can read more about this project [here](https://www.rand-on.com/datascience/2018_paris_subway/paris_subway.html).
+
 Here is a low-res version of the output. Each point is a subway station.
 Each circle is a subway line (color is official line color and circle
 size is proportional to line number)
